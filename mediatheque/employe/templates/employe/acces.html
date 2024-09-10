@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+        <h1>Bienvenue dans la bibliothèque</h1>
+        <nav>
+            <ul>
+                <h3><li><a href="creermembre/">Créer Membre</a></li></h3>
+                <h3><li><a href="listemembre/">Liste des Membres</a></li></h3>
+                <h3><li><a href="listemedia/">Liste des Médias</a></li></h3>
+                <h3><li><a href="ajoutmedia/">Ajouter un Médias</a></li></h3>
+                <h3><li><a href="empruntmedia/">Créer Emprunt</a></li></h3>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+<button><a href="../../">Retour</a></button>
+</body>
+</html>

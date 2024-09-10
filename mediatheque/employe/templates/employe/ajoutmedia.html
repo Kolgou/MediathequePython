@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Ajouter un média.</h1>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{media_form.as_p}}
+        <input type="submit" value="Ajouter le média">
+    </form>
+
+    <h1>Ajouter un jeu de plateau.</h1>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{jeu_form.as_p}}
+        <input type="submit" value="Ajouter le jeu de plateau">
+    </form>
+    <br>
+<button><a href="{% url 'acces' %}">Retour</a></button>
+</body>
+</html>

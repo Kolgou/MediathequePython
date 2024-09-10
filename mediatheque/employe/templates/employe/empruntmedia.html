@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un Emprunt</title>
+</head>
+<body>
+    <h1>Créer un Emprunt</h1>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="post" action="{% url 'empruntmedia' %}">
+    {% csrf_token %}
+        {{ form.media.label_tag }} {{ form.media }}
+        {{ form.membre.label_tag }} {{ form.membre }}
+    <button type="submit">Valider l'emprunt</button>
+</form>
+    <br>
+    <button><a href="{% url 'acces' %}">Retour</a></button>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Médias Membre</title>
+</head>
+<body>
+{% block content %}
+<h2>Liste des Médias</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Disponible</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for media in medias %}
+        <tr>
+            <td>{{ media.get_type_display }}</td>
+            <td>{{ media.titre }}</td>
+            <td>{{ media.auteur }}</td>
+            <td>
+                {% if media.disponible %}
+                    Oui
+                {% else %}
+                    Non
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+<h2>Jeux de Plateau</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Auteur</th>
+            <th>Disponible</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for jeu in jeux_de_plateau %}
+        <tr>
+            <td>{{ jeu.nom }}</td>
+            <td>{{ jeu.auteur }}</td>
+            <td>
+                {% if jeu.disponible %}
+                    Oui
+                {% else %}
+                    Non
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
